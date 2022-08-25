@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="myversion/test.properties"/>
+    <!-- Define your beans here -->
+    <bean id="MyLoggerConfig" class="myversion.MyLoggerConfig" init-method="initLogger">
+        <property name="rootLoggerLevel" value="FINE" />
+        <property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+    <bean id="myHappyFortuneService" class="myversion.HappyFortuneService">
+
+    </bean>
+    <bean id="myCoach" class="myversion.BaseballCoach">
+        <constructor-arg ref="myHappyFortuneService"/>
+
+    </bean>
+    <bean id="myEsportsCoach" class="myversion.EsportsCoach">
+    </bean>
+    <bean id="myCricketCoach" class="myversion.CricketCoach">
+        <!-- Create setter injection -->
+        <property name="fortuneService" ref="myHappyFortuneService"/>
+    </bean>
+    <bean id="myModifiedCricketCoach" class="myversion.CricketCoach">
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
+
+    </bean>
+</beans>
+
+
+
+
+
