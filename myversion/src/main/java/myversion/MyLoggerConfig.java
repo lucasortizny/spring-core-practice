@@ -4,7 +4,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 public class MyLoggerConfig {
     private String rootLoggerLevel;

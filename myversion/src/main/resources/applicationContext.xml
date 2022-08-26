@@ -6,7 +6,7 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="myversion/test.properties"/>
+    <context:property-placeholder location="test.properties"/>
     <!-- Define your beans here -->
     <bean id="MyLoggerConfig" class="myversion.MyLoggerConfig" init-method="initLogger">
         <property name="rootLoggerLevel" value="FINE" />

@@ -1,5 +1,9 @@
 package myversion;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.io.File;
+
 /**
  * Maven packages for import is spring-core and spring-context
  * I need to check out more of these packages to see what falls where. 
@@ -8,8 +12,23 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class HelloSpringApp {
 
+	private static void getAllFiles(File curDir) {
+
+		File[] filesList = curDir.listFiles();
+		for(File f : filesList){
+			if(f.isDirectory())
+				System.out.println(f.getName());
+			if(f.isFile()){
+				System.out.println(f.getName());
+			}
+		}
+
+	}
 	public static void main(String[] args) {
 		//load the spring configuration file
+		File curDir = new File(".");
+		HelloSpringApp.getAllFiles(curDir);
+
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		//retrive bean from spring container
