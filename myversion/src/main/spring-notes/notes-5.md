@@ -1,7 +1,7 @@
 # Bean Scopes and Bean Lifecycle (Notes #5)
 
 Some things that we need to think about:
-1) Scope refers to the lifecyle of the bean
+1) Scope refers to the lifecycle of the bean
 2) How long does the bean live?
 3) How many instances are created?
 4) How is the bean shared?
