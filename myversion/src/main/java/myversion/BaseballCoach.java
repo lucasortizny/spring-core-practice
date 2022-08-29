@@ -17,5 +17,14 @@ public class BaseballCoach implements Coach{
 		this.fortuneService = fortuneService;
 	}
 
+	//add an init method
+	public void doMyStartupStuff(){
+		System.out.println("Initializing the baseball coach");
+	}
+	//add a destroy method
+	public void doMyDestroyStuff(){
+		System.out.println("Destroying the baseball coach");
+	}
+
 
 }
