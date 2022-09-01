@@ -100,3 +100,15 @@ Again, the way this is gonna work is a two-step process (we love making step-by-
 - The **return type** can have any return type BUT you will not be able to capture the value of it. So just use "void".
 - The method name can be any name.
 - The method cannot have any arguments. It should be no-arg.
+
+## Important Note about Prototype Beans
+
+The beans that have the scope of ``prototype`` are constantly made differently and never return the same shared instance in memory.
+This scope also calls the initialization methods but **NEVER** calls the destroy method. This is because after creating the
+object, it does not take note of any other aspect of the object after it and so **MAKE SURE TO CLEAN UP THE RESOURCES USED 
+SINCE SPRING WON'T BE ABLE TO WITH THIS SCOPE**. Every other scope can have both ``init-methods`` and ``destroy-methods`` called by Spring.
+
+This aspect applies to both XML configurations and Annotation based configurations so be wary of the prototype scope's 
+distinctive features. If you need to see the prototype object utilize the destroy method, custom coding is done and an 
+example can be found [here](https://drive.google.com/open?id=1262cK04FYe7x3blpp2wVv7gmkvRyA_cX). If you want the appropriate
+link to the Udemy explanation of this, check it out [here](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/5809260#overview).
