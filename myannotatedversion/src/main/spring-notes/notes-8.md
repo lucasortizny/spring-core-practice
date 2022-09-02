@@ -109,3 +109,9 @@ the object and using the object. This means dependencies can be changed remotely
 FortuneService being a general interface and we can change which type of class is implemented
 using some Spring Annotations to focus on the dependency injection. It is good to check out
 the first five principles of Object-oriented Programming found [here](solid-notes.md).
+
+It seems that ``@Autowired`` is no longer required unless you are going to use multiple constructors. 
+In general it is good practice to use the annotations not just for readability sake but also for organizational
+purposes. Remember: **it is only required to use it when there is multiple constructors and one needs to be specified for
+dependency injections**.
+
