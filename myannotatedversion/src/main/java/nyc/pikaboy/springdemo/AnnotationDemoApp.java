@@ -1,10 +1,11 @@
 package nyc.pikaboy.springdemo;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationDemoApp {
     public static void main(String args[]){
         //first thing is read spring configuration file
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AnnotatedConfigurationClass.class);
 
         //get the bean from the spring container
         Coach myCoach = context.getBean("tennisCoach", Coach.class);
