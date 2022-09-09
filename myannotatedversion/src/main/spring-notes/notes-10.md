@@ -30,3 +30,8 @@ You place ``@Autowired`` directly on the field. Behind the scenes, when Spring
 creates your object, it will automatically set your field directly without having
 to do any additional work using something called Java Reflection.
 
+## Lucas' Notes
+
+Check out [this note](compare-injectiontypes.md) for more information on the different
+injection types and making the decision on which one to choose and how to invoke each of them.
+
