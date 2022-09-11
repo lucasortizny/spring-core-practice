@@ -17,7 +17,6 @@ public class AnnotationDemoApp {
         System.out.println(nflcoach.getDailyWorkout());
         System.out.println(myCoach.getDailyFortune());
         System.out.println(nflcoach.getDailyFortune());
-        System.out.println(swimcoach.getEmail());
 
         //close the context configuration
         context.close();

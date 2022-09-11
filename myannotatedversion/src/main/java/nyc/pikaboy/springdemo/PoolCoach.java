@@ -1,20 +1,20 @@
 package nyc.pikaboy.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SwimCoach implements Coach{
+public class PoolCoach implements Coach{
     private FortuneService fortuneService;
 
-    public SwimCoach(FortuneService theFortuneService){
-        fortuneService = theFortuneService;
+    @Autowired
+    public PoolCoach(FortuneService fortuneService){
+        this.fortuneService = fortuneService;
     }
+
     @Override
     public String getDailyWorkout() {
-        return "Swim one thousand meters as a warm up!";
+        return "This is the workout!";
     }
 
     @Override
